@@ -1,0 +1,22 @@
+Create a safe feature plan for the current retail dataset snapshot.
+
+Dataset context:
+- Required canonical columns: {required_columns_json}
+- Optional columns present now: {optional_present_json}
+- Optional columns absent now: {optional_absent_json}
+- All available columns now: {available_columns_json}
+
+Existing manual feature namespace (avoid duplicating these names):
+{manual_feature_names_json}
+
+Rules:
+- Output JSON only, no markdown and no code fences.
+- Use only operation types supported by the schema.
+- Use only available columns.
+- Avoid unsupported or unsafe operations.
+- Avoid features that require future data.
+- Keep plan concise and practical.
+- Focus on additive features, not blind duplicates of manual features.
+
+Return JSON matching this schema exactly:
+{feature_plan_schema_json}
