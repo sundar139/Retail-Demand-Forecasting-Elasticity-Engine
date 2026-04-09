@@ -26,8 +26,8 @@ Core design goals:
 flowchart TD
     A[data/raw/retail_store_inventory.csv] --> B[prepare-data]
     B --> C[build-manual-features]
-    C --> D[plan-llm-features (optional)]
-    D --> E[build-llm-features (optional)]
+    C --> D["plan-llm-features (optional)"]
+    D --> E["build-llm-features (optional)"]
     C --> F[fit-elasticity]
     E --> F
     C --> G[run-baselines]
