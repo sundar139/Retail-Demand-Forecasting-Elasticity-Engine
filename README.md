@@ -139,6 +139,22 @@ python -m retail_forecasting.cli export-forecasts
 ## Verified Results (Artifact-Sourced)
 All values below come from tracked artifacts in `artifacts/`.
 
+### ATS Key Metrics (Forecasting + Elasticity)
+Source: `artifacts/forecast_metrics_test.csv`, `artifacts/forecast_predictions_test.csv`, `artifacts/split_summary.json`, `artifacts/data_summary.json`, `artifacts/elasticity_estimates.csv`, `artifacts/optuna_study_summary.csv`, `data/raw/retail_store_inventory.csv`
+
+- Held-out test window: `2023-09-14` to `2024-01-01` (`17` ISO weeks, `110` daily periods)
+- Winner model (overall): `lightgbm`
+- Held-out test MAPE: `19.98698282574986`
+- Held-out test RMSE: `8.489630147821066`
+- Held-out test R^2: `0.993822`
+- Data coverage: `20` SKUs across `731` daily periods (`106` ISO weeks total)
+- Optuna best trial score (wmape): `5.840980263078363` (`xgboost`, `n_trials=2`)
+
+Top-3 estimated own-price elasticity coefficients (most negative; product/category):
+- `P0011` / `Furniture`: `-0.101879`
+- `P0003` / `Toys`: `-0.076076`
+- `P0017` / `Toys`: `-0.060932`
+
 ### Forecasting leaderboard (overall)
 Source: `artifacts/forecast_metrics_summary.csv`, `artifacts/best_model_registry.csv`
 
